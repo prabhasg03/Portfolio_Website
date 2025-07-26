@@ -1,91 +1,96 @@
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ===== Base Styling ===== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f4f4f4;
+  background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
 }
 
-.background-alt {
-  background: #fff;
+section {
   padding: 60px 20px;
 }
 
 .heading {
   text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 40px;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
   color: #2c3e50;
 }
 
+/* ===== Timeline ===== */
 #experience-timeline {
   position: relative;
   max-width: 900px;
   margin: auto;
-  padding: 0 20px;
+  border-left: 4px solid #3498db;
+  padding-left: 40px;
 }
 
-#experience-timeline::before {
-  content: '';
-  position: absolute;
-  left: 30px;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: #3498db;
-}
-
-#experience-timeline > div {
+/* ===== Timeline Entry ===== */
+#experience-timeline .timeline-entry {
   position: relative;
-  margin: 30px 0;
-  padding-left: 80px;
+  margin-bottom: 50px;
+  padding-left: 40px;
 }
 
-#experience-timeline > div::before {
+#experience-timeline .timeline-entry::before {
   content: '';
   position: absolute;
-  left: 18px;
-  top: 10px;
-  width: 25px;
-  height: 25px;
+  top: 0;
+  left: -23px;
+  width: 16px;
+  height: 16px;
+  background: #3498db;
+  border: 3px solid #fff;
   border-radius: 50%;
+  box-shadow: 0 0 0 3px #3498db;
+}
+
+/* ===== Logo ===== */
+#experience-timeline .logo {
+  position: absolute;
+  top: 0;
+  left: -80px;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
   background: #fff;
-  border: 4px solid #3498db;
+  border: 2px solid #ddd;
 }
 
-#experience-timeline h3 {
-  font-size: 1.6em;
+/* ===== Timeline Content ===== */
+#experience-timeline .timeline-entry h3 {
+  font-size: 1.5rem;
   margin-bottom: 5px;
+  color: #2c3e50;
 }
 
-#experience-timeline h4 {
-  font-size: 1.1em;
-  color: #7f8c8d;
+#experience-timeline .timeline-entry h4 {
+  font-size: 1.1rem;
+  color: #777;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+#experience-timeline .timeline-entry .date {
+  font-size: 0.95rem;
+  color: #999;
   margin-bottom: 10px;
 }
 
-#experience-timeline ul {
-  list-style: disc;
+#experience-timeline .timeline-entry ul {
   padding-left: 20px;
 }
 
-#experience-timeline li {
-  margin-bottom: 8px;
-}
-
-#experience-timeline img {
-  position: absolute;
-  left: -10px;
-  top: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  object-fit: cover;
-  border: 2px solid #ccc;
-  background: #fff;
+#experience-timeline .timeline-entry li {
+  margin-bottom: 10px;
+  list-style-type: disc;
 }
