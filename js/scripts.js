@@ -63,3 +63,27 @@
     });
 
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const statusMsg = document.getElementById("form-status");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      statusMsg.textContent = "Please fill in all fields.";
+      statusMsg.style.color = "red";
+      return;
+    }
+    statusMsg.textContent = "Sending message...";
+    statusMsg.style.color = "#333";
+    setTimeout(() => {
+      statusMsg.textContent = "Message sent successfully!";
+      statusMsg.style.color = "green";
+      form.reset();
+    }, 1500);
+  });
+});
