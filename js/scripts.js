@@ -2,9 +2,10 @@
     $("#current-year").text(new Date().getFullYear());
     $('html').removeClass('no-js');
     $('header a').click(function(e) {
-        if ($(this).hasClass('no-scroll')) return;
+        var href = $(this).attr('href');
+        if ($(this).hasClass('no-scroll') || !href || href.charAt(0) !== '#') return;
         e.preventDefault();
-        var heading = $(this).attr('href');
+        var heading = href;
         var scrollDistance = $(heading).offset().top;
         $('html, body').animate({
             scrollTop: scrollDistance + 'px'
@@ -61,6 +62,8 @@
             $('#more-projects').fadeIn(300);
         });
     });
+
+
 
 })(jQuery);
 

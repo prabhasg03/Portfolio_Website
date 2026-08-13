@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /robots.txt
+Disallow: /sitemap.xml
+
+Sitemap: https://prabhasguda.github.io/sitemap.xml
